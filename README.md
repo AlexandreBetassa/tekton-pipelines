@@ -108,3 +108,5 @@ Se tudo estiver certo, sua pipeline irá executar.
  [WEBHOOKS GITLAB](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
  [DOCKER LOGIN](https://docs.docker.com/engine/reference/commandline/login/)
  [GITLAB SSH](https://docs.gitlab.com/ee/user/ssh.html)
+
+ ## PARA SUGESTÕES DEIXE COMENTÁRIOS NO ISSUES.
