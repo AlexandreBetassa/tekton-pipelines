@@ -58,6 +58,7 @@ Abra arquivo "git-credentials.yml" com o editor de textos de sua preferência e 
     cat ~/.ssh/id_rsa | base64 -w 0
 
 No parâmetro "token", insira um código que funcionará como uma senha para autenticar o webhook do repositório com a sua pipeline. Esse valor você pode criá-lo, mas lembre-se que precisará dele para configurar o webhook no repositório.
+Caso não tenha uma chave ssh consulte documentação [GitLab](https://docs.gitlab.com/ee/user/ssh.html)
 Execute:
 
     kubectl apply -f .
@@ -73,3 +74,37 @@ ___
 Após criar a pipeline, se você estiver na pasta pipeline, execute o comando:
 
     cd ../triggers && kubectl apply -f .
+___
+### Configurar GitLab
+No repositório em que deseja configurar o webhook, acesse "Settings":
+
+![Settings](./img/img-settings.png)
+
+"Webhook": 
+
+![Webhook](./img/img-webhook.png)
+
+Abrirá a tela de configuração do webhook. Para configurá-lo, será necessário o endereço do seu eventlistener, volte ao terminal e execute:
+
+    kubectl get svc el-trigger-ref-eventlistener
+
+Ele retornará os serviços disponiveis, nesse caso criamos um "eventlistener" com serviço de "LoadBalancer". Copie o valor do campo "EXTERNAL-IP" e o valor do compo "PORT(s)". Esses valores são referentes ao host e a porta do qual seu serviço está sendo executado e receberá os webhooks.
+No campo URL coloque o endereço e a porta. Ex: "http://<host>:<port>" e no campo token insirá o mesmo valor do parametro "token" de git-credentials.
+
+![config](./img/config-secret-gitlab.png)
+
+Configure os eventos em que os webhooks serão disparados.
+
+![events](./img/settings_webbhook.png)
+
+Clique em Add Webhook. Ele aparecerá abaixo criada e com algumas opções, uma delas é "test". Clique e selecione a opção compativel com um evento que você configurou.
+
+![test](./img/teste-webhooko.png)
+
+Se tudo estiver certo, sua pipeline irá executar.
+
+## REFERÊNCIA:
+ [TEKTON PIPELINES](https://tekton.dev/docs/)
+ [WEBHOOKS GITLAB](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
+ [DOCKER LOGIN](https://docs.docker.com/engine/reference/commandline/login/)
+ [GITLAB SSH](https://docs.gitlab.com/ee/user/ssh.html)
