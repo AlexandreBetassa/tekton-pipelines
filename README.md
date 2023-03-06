@@ -6,7 +6,7 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
 
     - Cluster de Kubernetes;
     - Noções de programação;
-    
+___    
 ## Execução:
 ### Instale o tekton-pipelines
 
@@ -16,7 +16,7 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
 
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml
 
-    Faça o 'port-forward':
+Faça o 'port-forward' do 'dashboard' tekton:
 
     kubectl port-forward svc/tekton-dashboard 9097 -n tekton-pipelines
 
@@ -33,7 +33,6 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
 #### Git-Clone:
 
     kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.6/git-clone.yaml
-
 
 #### Kaniko:
 
