@@ -1,0 +1,22 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: Trigger
+metadata:
+  name: trigger
+spec:
+  interceptors:
+    - ref:
+        name: "gitlab"
+      params:
+        - name: "secretRef"
+          value:
+            secretName: gitlab-token
+            secretKey: token
+  bindings:
+    - name: repo-url
+      value: $(body.repository.git_ssh_url)
+    - name: image-reference
+      value: <UsuarioDocker>/$(body.repository.name)
+    - name: revision
+      value: develop
+  template:
+    ref: trigger-template

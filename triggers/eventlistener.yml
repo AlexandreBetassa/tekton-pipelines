@@ -1,0 +1,13 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: trigger-ref-listener
+spec:
+  serviceAccountName: tekton-triggers-app
+  triggers:
+    - triggerRef: trigger
+  resources:
+    kubernetesResource:
+      serviceType: LoadBalancer
+      servicePort: 8000
+---
