@@ -1,5 +1,5 @@
 # Tekton-pipeline
-## Objetivo:
+## Objetivo
 Este projeto tem como objetivo a criação de um projeto simples para implementação de uma pipeline com Tekton-pipelines. Ela possui as tarefas de clonar o código fonte do repositório, fazer o build da imagem e efetuar um push para um repositório no DockerHub.
 
 ## Requisitos
@@ -8,7 +8,7 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
     - Noções de programação;
     - Feramenta kubectl;
 ___    
-## Execução:
+## Execução
 ### Instale o tekton-pipelines
 
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
@@ -31,12 +31,12 @@ ___
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml
 
 ___
-### Instale as Tasks:
-#### Git-Clone:
+### Instale as Tasks
+#### Git-Clone
 
     kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.6/git-clone.yaml
 
-#### Kaniko:
+#### Kaniko
 
     kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/kaniko/0.6/kaniko.yaml
 ___
@@ -103,7 +103,7 @@ Clique em Add Webhook. Ele aparecerá abaixo criada e com algumas opções, uma 
 
 Se tudo estiver certo, sua pipeline irá executar.
 
-## REFERÊNCIA:
+## REFERÊNCIA
     
 [TEKTON PIPELINES](https://tekton.dev/docs/)
 
