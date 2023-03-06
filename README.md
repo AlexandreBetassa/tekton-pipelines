@@ -41,7 +41,7 @@ ___
     kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/kaniko/0.6/kaniko.yaml
 ___
 ### Credenciais
-#### Docker
+#### - Docker
 Para que o processo ocorra de maneira segura e você possa acessar os repositórios, é necessário criar algumas secrets no kubernetes.
 Para isso navegue até a pasta credentials:
 
@@ -52,10 +52,24 @@ Abra arquivo "docker-credentials.yml" com o editor de textos de sua preferência
     cat ~/.docker/config.json | base64 -w 0
 
 Caso não possua essas credenciais, consulte documentação [Docker](https://docs.docker.com/engine/reference/commandline/login/).
-#### Git
+#### - Git
 Abra arquivo "git-credentials.yml" com o editor de textos de sua preferência e onde esta o parâmetro "id_rsa:" coloque o valor da sua chave .ssh codificado em base64. Caso não saiba execute no terminal:
 
     cat ~/.ssh/id_rsa | base64 -w 0
 
 No parâmetro "token", insira um código que funcionará como uma senha para autenticar o webhook do repositório com a sua pipeline. Esse valor você pode criá-lo, mas lembre-se que precisará dele para configurar o webhook no repositório.
+Execute:
 
+    kubectl apply -f .
+___
+### Pipeline
+Após criar as credenciais, se você estiver na pasta credentials, execute o comando:
+
+    cd ../pipeline && kubectl apply -f .
+
+Isso criará configurará a pipeline.
+___
+### Triggers
+Após criar a pipeline, se você estiver na pasta pipeline, execute o comando:
+
+    cd ../triggers && kubectl apply -f .
