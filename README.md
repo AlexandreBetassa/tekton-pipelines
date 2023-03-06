@@ -6,6 +6,7 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
 
     - Cluster de Kubernetes;
     - Noções de programação;
+    - Feramenta kubectl;
 ___    
 ## Execução:
 ### Instale o tekton-pipelines
@@ -38,4 +39,16 @@ ___
 #### Kaniko:
 
     kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/kaniko/0.6/kaniko.yaml
+___
+### Credenciais
+Para que o processo ocorra de maneira segura e você possa acessar os repositórios, é necessário criar algumas secrets no kubernetes.
+Para isso navegue até a pasta credentials:
+
+    cd ./credentials
+
+Abra arquivo "docker-credentials" com o editor de textos de sua preferência e onde esta o valor "<config.json base64>" coloque o valor das suas credenciais docker codificado em base64. Caso não saiba execute no terminal:
+
+    cat ~/.docker/config.json | base64 -w 0
+
+Caso não possua essas credenciais, consulte documentação [Docker](https://docs.docker.com/engine/reference/commandline/login/).
 
