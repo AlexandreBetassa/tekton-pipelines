@@ -4,8 +4,5 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
 
 ## Execução:
 ### Instale o tekton-pipelines:
-´´´
 
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
-    
-´´´
