@@ -20,6 +20,7 @@ Faça o port-forward do dashboard tekton:
 
     kubectl port-forward svc/tekton-dashboard 9097 -n tekton-pipelines
 
+___
 ### Instale tekton-triggers
 
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/triggers/latest/release.yaml
@@ -28,8 +29,8 @@ Faça o port-forward do dashboard tekton:
 
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/triggers/latest/interceptors.yaml
 
+___
 ### Instale as Tasks:
-
 #### Git-Clone:
 
     kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.6/git-clone.yaml
