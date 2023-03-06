@@ -16,7 +16,7 @@ ___
 
     kubectl apply --filename https://storage.googleapis.com/tekton-releases/dashboard/latest/release.yaml
 
-Faça o 'port-forward' do 'dashboard' tekton:
+Faça o port-forward do dashboard tekton:
 
     kubectl port-forward svc/tekton-dashboard 9097 -n tekton-pipelines
 
