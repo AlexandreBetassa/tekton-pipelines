@@ -105,12 +105,12 @@ Se tudo estiver certo, sua pipeline irá executar.
 
 ## REFERÊNCIA:
     
-    [TEKTON PIPELINES](https://tekton.dev/docs/)
+[TEKTON PIPELINES](https://tekton.dev/docs/)
 
-    [WEBHOOKS GITLAB](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
+[WEBHOOKS GITLAB](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html)
 
-    [DOCKER LOGIN](https://docs.docker.com/engine/reference/commandline/login/)
+[DOCKER LOGIN](https://docs.docker.com/engine/reference/commandline/login/)
 
-    [GITLAB SSH](https://docs.gitlab.com/ee/user/ssh.html)
+[GITLAB SSH](https://docs.gitlab.com/ee/user/ssh.html)
 
  ## PARA SUGESTÕES DEIXE COMENTÁRIOS NO ISSUES.
