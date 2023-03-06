@@ -6,7 +6,7 @@ Este projeto tem como objetivo a criação de um projeto simples para implementa
 
     - Cluster de Kubernetes;
     - Noções de programação;
-    - Feramenta kubectl;
+    - Ferramenta kubectl;
 ___    
 ## Execução
 ### Instale o tekton-pipelines
